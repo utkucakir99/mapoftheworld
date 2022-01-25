@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+
+<html lang="de">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet"  href="/stylesheets/pagesetup.css" />
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+    <title> map of the world | main page</title>
+
+    <link rel="icon" href="/images/title_logo.png" type="image/png" />
+    
+   
+ 
+
+    <nav class="navbar">
+        <div class="brand-title"></div>
+
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+
+
+
+        <div class="navbar-links">
+            <ul>
+                <li> <a href="/information">INFORMATION</a> </li> 
+                <li> <a href="/GDP">GDP/BIP</a> </li>  
+                <li> <a href="/GPG">GENDER PAY GAP</a> </li> 
+                <li>
+                  <div class="dropdown">
+                      <a class="btn-boot" href="/laender">LÄNDER</a>
+                      <i  class="fa fa-caret-content"></i>
+                      
+                    <div class="dropdown-content">
+                      <a href="/Deutschland">GERMANY</a>
+                      <a href="/Frankreich">FRANCE</a>
+                      <a href="/Italien">ITALY</a>
+                      <a href="/Spanien">SPAIN</a>
+                    </div>
+                  </div>
+              </li>
+              
+          </ul>
+            </ul>
+
+        </div>
+     </nav>
+
+     <!-- folgender JS Code ist dafür zuständig, wenn man den toggle-button (oben rechts anklickt, damit die Inhalte (Buttons) auch angezeigt werden-->
+
+     <script>
+       const ButtonfuerkleineDisplays = document.getElementsByClassName('toggle-button')[0]
+       const navbarlink = document.getElementsByClassName('navbar-links')[0]
+      
+      
+       ButtonfuerkleineDisplays.addEventListener('click', () => { 
+         navbarlink.classList.toggle('active')
+       });
+     </script>
+
+<div class="mainlogonavbar">
+  <a href="/">
+    <img src="/images/main_logo_bottomright.png" alt="main logo" style="height: 50px" >  
+</a>
+</div>
+
+
+<div class="mainlogosmall">
+  <a href="/">
+    <img src="/images/logo_footer.png" alt="main small logo" style="height: 21px" >  
+</a>
+</div>
+
+<!--  JS-Skript für die background Images-->
+<script>
+    
+  $(document).ready(function(){
+    var classCycle=['Foto1','Foto2', 'Foto3', 'Foto4'];
+    var randomNumber = Math.floor(Math.random() * classCycle.length);
+    var classToAdd = classCycle[randomNumber];
+    
+    $('body').addClass(classToAdd);
+});
+</script> 
+
+
+</head>
+
+
+<!-- Beginn footer-->
+
+<footer class="footer">
+   
+   
+  <div class="container">
+    <p class="text-muted">mapoftheworld project winterterm 2021/22 -- courses: VBI, Anw. DT and BD</p>
+  </div>
+
+  <div class="container" >
+    <a href="/imprint"> 
+    <button class="btnimprint" >Impressum</button>
+  </a>
+  </div>
+
+ <!---  <div class="footerpicture">
+    <img src="/images/logo_footer.png"  alt="main logo" width="125" height="20" >
+  </div> -->
+
+
+</footer>
+
+<!-- Ende footer-->
+
+
+</html>

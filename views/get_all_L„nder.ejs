@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>alle Länder</h2>
+    <ul>
+      <% DBs.forEach(function(DB){ %>
+        <li><a href="/<%= DB.id %>"><%= DB.StaatLabel %></a></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

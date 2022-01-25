@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="http://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+
+<!-- Create an element where the map will take place -->
+
+<div id="container" class="svg-container"> </div>
+
+
+
+
+<script type="text/javascript">
+    // The svg
+    var w = 1400;
+    var h = 950;
+    var svg = d3.select("div#container")
+    .append("svg")
+    .attr("preserveAspectRatio", "xMinYMin meet")
+    .attr("viewBox", "0 0 " + w + " " + h)
+    .style("background","#ffffff00")
+    .classed("svg-content", true);
+    
+    // Map and projection
+    var path = d3.geoPath();
+    var projection = d3.geoMercator()       // Ab hier können wir die größe der map innerhalb des svg bestimmen
+      .scale(1300)
+      .center([0,50])
+      .translate([width /2, height / 1])  // Damit kann ich einstellen, wie dei svg Grafik besser steht 
+    
+    // Data and color scale
+    var data = d3.map();
+    var colorScale = d3.scaleThreshold()
+      .domain([0, 5, 10, 15, 20, 25, ])
+      .range(d3.schemeReds[7]);
+    
+    
+        
+    // laden der Daten mit d3.json und d3.csv:
+    d3.queue()
+      .defer(d3.json, "/europemapdata") // Gefunden auf https://github.com/leakyMirror/map-of-europe wo nur die Geo Daten von Europäischen Ländern abgebildet ist , die GeoJson Datei hab ich heruntergeladen und lokal gespeichert
+      .defer(d3.csv, "/europedata", function(d) { data.set(d.code, +d.pop); })
+      .await(ready);
+     
+   
+    
+    function ready(error, topo) {
+    
+      let mouseOver = function(d) {
+        d3.selectAll(".Country")
+          .transition()
+          .duration(200)
+          .style("opacity", .4)
+          
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .style("opacity", 6)
+          .style("stroke", "black")
+      }
+    
+      let mouseLeave = function(d) {
+        d3.selectAll(".Country")
+          .transition()
+          .duration(200)
+          .style("opacity", .8)
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .style("stroke", "transparent")
+      }
+    
+      // Ab hier wird die Map wird gezeichnet
+      svg.append("g")
+        .selectAll("path")
+        .data(topo.features)
+        .enter()
+        .append("path")
+          // die Länder
+          .attr("d", d3.geoPath()
+            .projection(projection)
+          )
+          // Farbedefinition:
+          .attr("fill", function (d) {
+            d.total = data.get(d.id) || 0; // get ID !!! 
+            return colorScale(d.total);
+          })
+          .style("stroke", "transparent")
+          .attr("class", function(d){ return "Country" } )
+          .style("opacity", .8)
+          .text(function(d) { return d.pop; })
+          .on("mouseover", mouseOver )
+          .on("mouseleave", mouseLeave )
+          .attr("class", "legendLinear")
+    .attr("transform", "translate(20,20)");
+        }
+        var legendLinear = d3.legendColor()             // Legende hat nicht geklappt ?????? 
+    .shapeWidth(30)
+    .cells([1, 2, 3, 6, 8])
+    .orient('horizontal')
+    .scale(linear);
+  
+  svg.select(".legendLinear")
+    .call(legendLinear);
+      
+        
+    
+    </script>

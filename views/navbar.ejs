@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+      map of the world | main page
+    </title>
+
+    <link rel="stylesheet"  href="/stylesheets/navbar.css" /> 
+    <link rel="icon" href="/images/title_logo.png" type="image/png" />
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+   
+    <!--  JS-Skript für die background Images-->
+    <script>
+    
+    $(document).ready(function(){
+      var classCycle=['Foto1','Foto2', 'Foto3', 'Foto4'];
+  
+      var randomNumber = Math.floor(Math.random() * classCycle.length);
+      var classToAdd = classCycle[randomNumber];
+      
+      $('body').addClass(classToAdd);
+  });
+  </script> 
+   
+
+
+
+
+
+
+  
+   <!-- BEGIN NAVBAR -->
+
+    <nav class="navbar">
+      <a href="Platzhalter" id="myTopnav"></a>
+
+
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+
+      <ul>
+          <li>
+              <a class="btn-boot" href="/information"> INFORMATION </a>
+          </li>
+          <li>
+              <a class="btn-boot" href="/GDP"> GDP/BIP </a>
+          </li>
+          <li>
+              <a class="btn-boot" href="/HDI"> HDI </a>
+          </li>
+          <li>
+            <a class="btn-boot" href="/germany"> Länder </a>
+        </li>
+      
+        
+        
+        
+          <!---   Funktioniert nicht ??
+            
+            <li>
+            <div class="dropdown">
+                <a class="btn-boot" href="">LÄNDER</a>
+                <i  class="fa fa-caret-content"></i>
+                
+              <div class="dropdown-content">
+                <a href="/germany">Germany</a>
+                <a href="/france">France</a>
+                <a href="/spain">Spain</a>
+                <a href="/italy">Italy</a>
+              </div>
+            </div>
+        </li>
+      -->
+      </ul>
+    </nav>
+
+
+    <div class="mainlogonavbar">
+      <a href="/">
+        <img src="/images/main_logo_bottomright.png" alt="main logo" width="245" height="50" >  
+    </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    
+    <!-- folgender JS Code ist daffür zuständig, wenn man den toggle-button (oben rechts anklickt, damit die Inhalte (Buttons) auch angezeigt werden-->
+    <script>
+       const ButtonfuerkleineDisplays = document.getElementsByClassName('toggle-button')[0]
+       const navbarlink = document.getElementsByClassName('btn-boot')[0]
+      
+      
+       ButtonfuerkleineDisplays.addEventListener('click', () => { 
+         navbarlink.classList.toggle('active')
+       });
+     </script>
+  </head>
+
+
+
+<!-- ENDE NAVBAR -->
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+   
+   
+    <div class="container">
+      <p class="text-muted">mapoftheworld project winterterm 2021/22 -- courses: VBI, Anw. DT and BD</p>
+    </div>
+
+    <div class="container" >
+      <a href="/imprint"> 
+      <button class="btnimprint" >Impressum</button>
+    </a>
+    </div>
+
+   <!---  <div class="footerpicture">
+      <img src="/images/logo_footer.png"  alt="main logo" width="125" height="20" >
+    </div> -->
+
+
+  </footer>
+
+
+  
+</html>

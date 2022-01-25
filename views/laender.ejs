@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+  
+ <!-- unser Stylesheet -->
+ <link rel="stylesheet"  href="/stylesheets/laender.css" /> 
+ 
+
+ <!-- Bootstrap Stylesheet für Buttons-->
+ <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+ 
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <title> 
+    EU-Länder | mapoftheworld
+  </title>
+  
+ 
+  <% include pagesetup.ejs %>
+  
+
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>-->
+
+
+ 
+</head>
+
+
+
+
+<body>
+
+  <div class="main">
+    <h1>Platzhatlter</h1>
+    <h1>Platzhatlter</h1>
+    <h1>Platzhatlter</h1>
+
+    <table>
+    <tr>
+        <td><a href="https://european-union.europa.eu/index_de" target=”_blank”>
+            <img src="/images/eu_flag.png" alt="flag DE" style="height:30px" >
+          </a></td>
+        <td>&nbsp; EU Länder nach BIP sortiert: </td>
+      </tr>
+    </table>
+
+    <ul class="cards">
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Deutschland_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">DEUTSCHLAND</h2>
+            <p class="card_text"> liegt in der Mitte Europas </p>
+            <a href="/Deutschland" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Frankreich_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">FRANKREICH</h2>
+            <p class="card_text">liegt im Westen Europas. Zwischen UK und FR liegt fliest der Ärmelkanal.</p>
+            <a href="/Frankreich" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+      
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Italien_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">ITALIEN</h2>
+            <p class="card_text">liegt am Mittelmeer im Süden Europas</p>
+            <a href="/Italien" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Spanien_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">SPANIEN</h2>
+            <p class="card_text">liegt auf der Iberischen Halbinsel in Südeuropa</p>
+            <a href="/Spanien" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Niederlande_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">NIEDERLANDE</h2>
+            <p class="card_text">liegt im Westen Europas und gehört zu den sog. BENELUX Staaten</p>
+            <a href="/Niederlande" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Polen_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">POLEN</h2>
+            <p class="card_text">liegt im Osten Europas.</p>
+            <a href="/Polen" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Schweden_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">SCHWEDEN</h2>
+            <p class="card_text">liegt im Norden Europas, ist ein Nachbarland von Finnland</p>
+            <a href="/Schweden" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Belgien_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">BELGIEN</h2>
+            <p class="card_text">liegt in Westen Europas und gehört zu den sog. BENELUX Staaten </p>
+            <a href="/Belgien" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="/images/Österreich_pic.png"></div>
+          <div class="card_content">
+            <h2 class="card_title">ÖSTERREICH</h2>
+            <p class="card_text">liegt in Mitteleuropa und ist ein Nachbarland von Deutschland </p>
+            <a href="/Österreich" class="btn btn-outline-dark" role="button" aria-pressed="true">Zur Länderpage</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="cards_itemvisible">
+        <div class="card">
+          <div class="card_image"><img src=".."></div>
+          <div class="card_content">
+            <h2 class="card_title">PLATZHALTER</h2>
+            <p class="card_text"></p>
+            
+          </div>
+        </div>
+      </li>
+
+     
+
+      
+
+
+
+    </ul>
+  </div>
+  
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+
+
+</html> 

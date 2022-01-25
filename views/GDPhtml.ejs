@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+     
+        
+       
+        
+        <!-- unser Stylesheet -->
+        <link rel="stylesheet"  href="/stylesheets/GDPcss.css" />
+
+      
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+        <title> 
+          GDP/BIP-comparison | map of the world
+        </title>
+
+
+        <%- include pagesetup.ejs %>
+
+      </head>
+
+
+      <body>
+
+        
+        
+          
+<div class="BODY2">
+
+<div class="buttons1_2" >
+    <div class="button1" >
+        <a  id="bykey"><span>Alphabetisch</span></a>
+      </div>
+      
+      <div class="button2">
+        <a  id="byvalue"  ><span>Nach BIP</span></a>
+      </div> 
+</div>
+
+
+
+
+<div class="card">
+    
+
+ 
+
+
+    <div class="part2">
+    
+      <div class="chart">
+        <%- include GDPjs.ejs %>
+      </div>
+    
+     
+    <div class="chart2">
+      <a></a>
+    </div>
+    
+    
+      <h4></h4> 
+    
+    </div>
+</div>
+</div>
+
+
+      </body>
+
+
+
+
+
+
+    
+</html>

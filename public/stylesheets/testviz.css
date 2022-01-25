@@ -1,0 +1,282 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    color: #272727;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+
+
+.main{
+  max-width: 80%;
+  margin: 0 auto;
+  
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    top: 100px;
+    visibility: hidden;
+}
+
+img {
+  
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+
+table {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+  background: transparent;
+  
+}
+
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  width: 150%;
+  
+}
+
+div.card_image {
+   
+
+}
+
+.cards_item {
+  display: inline;
+  padding: 1rem;
+
+}
+
+.cards_itemvisible {
+    visibility: hidden; 
+    
+}
+
+
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 33.3333%;
+  }
+
+ 
+}
+@media screen and (max-width: 770px) {
+    table {
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;  
+        text-align: center;
+        color: rgb(51, 51, 51)
+    }
+    
+    
+}
+@media screen and (max-width: 650px) {
+
+    table {
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;  
+        text-align: center;
+    }
+    
+    
+}
+
+
+
+
+
+
+.card {
+  background-color: rgba(255, 255, 255, 0.185);
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+
+}
+
+.card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #8dc3ef 40%, #be4900e8 100%);
+  
+}
+
+.card_title {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize, uppercase;
+  margin: 0px;
+ 
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;    
+  font-weight: 400;
+
+}
+
+
+ 
+
+
+
+div.card.button1{
+    align-items: center;
+    margin-left:  0em;
+        padding-top: 0em;
+        margin-top: 0em;
+    position: fixed;
+    top: 20%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+   
+  }
+  
+  .button1 a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: .5px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .button1 a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .button1 a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ff003b;
+    transition: all .35s;
+  }
+  
+  .button1 a:hover{
+    color: #fff;
+  }
+  
+  .button1 a:hover:after{
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  div.card.button2{
+    margin-left:  0em;
+        padding-top: 0em;
+        margin-top: 0em;
+    position: fixed;
+    top: 20%;
+    left: 0%;
+    transform: translate(-20%, -20%);
+    align-items: center;
+  }
+  
+  .button2 a{
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: .5px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  .button2 a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .button2 a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #0406a1;
+    transition: all .35s;
+  }
+  
+  .button2 a:hover{
+    color: #fff;
+  }
+  
+  .button2 a:hover:after{
+    width: 100%;
+  }

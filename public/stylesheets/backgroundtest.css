@@ -1,0 +1,39 @@
+
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin: 0 auto;
+  float: none;
+  transition: 0.3s;
+  margin-top: 150px;
+  width: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0.253);
+}
+ 
+
+p{
+    margin-left:  3em;
+    padding-top: 1em;
+    margin-top: 1em;
+}
+.part2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2px;
+    padding: 1em;
+}
+h4{
+    margin: 1em;
+}
+
+h5 {
+    margin: 1em;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+b {
+  padding: 2px 16px;
+}

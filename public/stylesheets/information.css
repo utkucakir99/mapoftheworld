@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+/*
+body {
+display: flex; 
+justify-content: center;
+align-items: center;
+height: 100vh;
+} */
+
+
+
+.bodycard{
+display: flex; 
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.card {
+width: 800px;
+height: 600px;
+position: relative; 
+cursor: pointer;
+
+}
+
+
+.card .content{
+font-family: Arial, Helvetica, sans-serif;
+width: 100%; 
+height: 100%;
+background: rgba(255, 255, 255, 0.034);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.308);
+border-radius: .8rem;
+color: white; 
+display: flex;
+justify-content: center; 
+align-items: center;
+flex-direction: column;
+box-shadow: 0 0 30px rgba(0, 0, 0, 0.055);
+transition: all .4s;
+}
+
+.card .content h1{
+  letter-spacing:  0.5px;  
+}
+ 
+ 
+.card .content p{
+font-size: 1em;
+padding: 0.3em 1.5em;
+text-align: justify;
+margin: 1.5rem 0 2rem;
+}
+
+.card:hover .content{color: rgb(36, 36, 36);}
+.card::before,
+.card::after{
+content:''; 
+position: absolute;
+width: 100%;
+height: 50%;
+background:  #1e938db6;
+z-index: -20;
+transition: all .4s;
+border-radius: 0.8rem;
+
+}
+
+.card::before{top: 0; right: 0;}
+.card::after{
+bottom: 0; 
+left: 0; 
+background: #007fa69d;
+}
+
+.card:hover::before{
+width: 50px; 
+height: 50px;
+transform: translate(20px, -20px);
+border-radius: 0.8rem;
+}
+
+.card:hover::after{
+width: 100px; 
+height: 100px;
+transform: translate(-20px, 20px);
+border-radius: 0.8rem;
+}
+
+
+
+
+div.alllogos {
+      width: 100%;
+      height: auto;
+      max-height: 40;
+}
+
+div.mongoDBlogo {
+  position: fixed;
+  width: 100%;
+      height: auto;
+      max-height: 40;
+  left: 20px; 
+  top: 530px;
+  /*right: 100px; top: 10px; */
+}
+
+div.d3logo {
+  position: fixed;
+  left: 190px; 
+  top: 530px;
+  
+}
+
+div.htmllogo {
+  position: fixed;
+  left: 250px; 
+  top: 530px;
+  
+}
+
+
+div.csslogo {
+  position: fixed;
+  left: 300px; 
+  top: 530px;
+}
+
+div.JSlogo {
+  position: fixed;
+  left: 350px; 
+  top: 530px;
+  
+}
+
+div.wikidatalogo {
+  position: fixed;
+  left: 420px; 
+  top: 530px;
+  
+}
+
+
+
+
+
+
+
+
+@media screen and (max-height: 750px) {
+  .bodycard{
+    display: fixed; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+    
+  
+}
+
+
+@media screen and (max-width: 490px) {
+ div.alllogos{
+  display: none;
+    }
+    
+   
+}

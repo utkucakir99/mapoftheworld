@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+     
+        
+       
+        
+        <!-- unser Stylesheet -->
+        <link rel="stylesheet"  href="/stylesheets/Vizsite.css" />
+
+      
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+        <title> 
+          Germany | map of the world
+        </title>
+
+
+        <%- include pagesetup.ejs %>
+
+      </head>
+
+
+      <body>
+
+
+<div class="BODY2">
+
+<div class="card">
+    
+
+    <div class="button1">
+        <a  onclick="update('DE')" ><span>DEUTSCHLAND</span></a>
+      </div>
+      
+      <div class="button2">
+        <a  onclick="update('EU')" ><span>EU </span></a>
+      </div>
+
+
+    <div class="part2">
+    
+      <div class="chart">
+      <%- include barchart.ejs %>
+    </div>
+
+    <div class="chart2">
+      <a>Arbeitslosenqoute der EU-Länder im Jahr 2021: </a>
+      <%- include germany2js.ejs %>
+    </div>
+    
+    
+      <h4>Arbeitslosenquote von Deutschland und alle EU-Staaten<br> 
+          X-Achse: Jahren, Y-Achse: In % </h4> 
+    <h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ø Arbeitslosenquote EU im Jahr 2020: 7,2%</i> <script></script></h4> 
+    
+    </div>
+</div>
+</div>
+
+
+
+      </body>
+
+      
+                
+
+
+
+
+
+    
+</html>

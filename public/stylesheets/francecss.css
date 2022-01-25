@@ -1,0 +1,223 @@
+
+div.BODY2 {  
+  width: auto;
+  height: 103vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  padding: 0 0rem; /* beim verändern verschiebt sich unser Navbar nach rechts ein bisschen ??? wtf.... */
+  font-family: Arial, Helvetica, sans-serif;
+} 
+
+
+
+.card {
+  position: center;
+    width: 100%;
+    margin: 0 1rem;
+    max-height: 85%;
+    max-width: 60%;
+    padding: 2rem;      
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 1.4rem 8rem rgba(0,0,0, 0.2);
+    display: flex;
+    align-items: normal;
+    border-radius: .8rem;
+    display: inline-block;
+}
+
+
+  
+  .card p{
+      margin-left:  0em;
+      padding-top: 0em;
+      margin-top: 0em;
+  }
+
+  .part2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 2px;
+      padding: 1em;
+      text-transform: uppercase;
+  }
+
+  .chart {
+    margin-left:  auto;
+    
+  }
+  .chart2 {
+    margin-left: 5rem;
+  }
+
+  .h4{
+      margin: 2em;
+  }
+  
+  .h5 {
+      margin: 1em;
+  }
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+ 
+ 
+
+  
+
+ 
+div.card.button1{
+  align-items: center;
+  margin-left:  0em;
+      padding-top: 0em;
+      margin-top: 0em;
+  position: fixed;
+  top: 20%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.button1 a{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.button1 a span{
+  position: relative;
+  z-index: 2;
+}
+
+.button1 a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
+
+.button1 a:hover{
+  color: #fff;
+}
+
+.button1 a:hover:after{
+  width: 100%;
+}
+
+
+
+
+.button1 a{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.button1 a span{
+  position: relative;
+  z-index: 2;
+}
+
+.button1 a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
+
+.button1 a:hover{
+  color: #fff;
+}
+
+.button1 a:hover:after{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+div.card.button2{
+  margin-left:  0em;
+      padding-top: 0em;
+      margin-top: 0em;
+  position: fixed;
+  top: 20%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
+.button2 a{
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+.button2 a span{
+  position: relative;
+  z-index: 2;
+}
+
+.button2 a:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #0406a1;
+  transition: all .35s;
+}
+
+.button2 a:hover{
+  color: #fff;
+}
+
+.button2 a:hover:after{
+  width: 100%;
+}

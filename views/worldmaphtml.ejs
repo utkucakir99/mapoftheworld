@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+  
+
+ <!-- Bootstrap Stylesheet für Buttons-->
+ <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+ 
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>-->
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <% include pagesetup.ejs %>
+</head>
+
+
+  <style>
+   
+    #map-create {
+        top: 0%;
+        left: 10%;
+      width: 100vw;
+      height: 80vh;
+      display: center;
+      position: fixed;
+      
+    }
+    svg rect {
+      fill: rgba(255, 255, 255, 0);   
+    }
+    .country{
+      fill: #d0d0d0;   
+      stroke: #141010; 
+      stroke-width: 1; 
+    }
+    .country-on{
+      fill: #292e31;   
+    }
+    .countryLabel{
+      display: none;   
+    }
+    .countryName{
+      fill: #FFFAFF;   
+    }
+    .countryLabelBg{
+      fill: #30BCED;   
+    }
+@media (max-width: 1700px) {
+#map-create {
+top: -10%;
+left: 1%;
+width: 100vw;
+height: 90vh;
+display: center;
+position: flex;
+}
+}
+@media only screen and (min-width:2730) {
+    #map-create {
+top: -10%;
+left: 30%;
+width: 100vw;
+height: 90vh;
+display: center;
+position: flex;
+}	
+}
+  </style>
+  <body>
+    <div id="map-create"></div>
+    <script type="text/javascript">
+    
+      
+      w = 1500;
+      h = 1000;
+      
+      
+      let projection = d3
+      .geoEquirectangular()
+        .center([0, 15]) 
+        .scale([w / (2 * Math.PI)]) 
+        .translate([w / 2, h / 2]) 
+      
+      ;
+      
+      var path = d3
+        .geoPath()
+        .projection(projection)
+      ;
+     
+      function getTextBox(selection) {
+        selection
+          .each(function(d) {
+            d.bbox = this
+              .getBBox();
+            })
+        ;
+      }
+      var svg = d3
+        .select("#map-create")
+        .append("svg")
+        .attr("width", $("#map-create").width())
+        .attr("height", $("#map-create").height())
+      ;
+      d3.json(
+        "https://raw.githubusercontent.com/andybarefoot/andybarefoot-www/master/maps/mapdata/custom50.json",
+        function(json) {
+          countriesGroup = svg.append("g").attr("id", "map");
+          countriesGroup
+            .append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", w)
+            .attr("height", h);
+          countries = countriesGroup
+            .selectAll("path")
+            .data(json.features)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .attr("id", function(d, i) {
+              return "country" + d.properties.iso_a3;
+            })
+            .attr("class", "country")
+            .on("mouseover", function(d, i) {
+                d3.select("#countryLabel" + d.properties.iso_a3).style("display", "block");
+            })
+            .on("mouseout", function(d, i) {
+                d3.select("#countryLabel" + d.properties.iso_a3).style("display", "none");
+            })
+          
+          .on("click", function(d, i) {
+                d3.selectAll(".country").classed("country-on", false);
+                d3.select(this).classed("country-on", true);
+            
+            });
+          countryLabels = countriesGroup
+            .selectAll("g")
+            .data(json.features)
+            .enter()
+            .append("g")
+            .attr("class", "countryLabel")
+            .attr("id", function(d) {
+              return "countryLabel" + d.properties.iso_a3;
+            })
+            .attr("transform", function(d) {
+              return (
+                "translate(" + path.centroid(d)[0] + "," + path.centroid(d)[1] + ")"
+              );
+            })
+            .on("mouseover", function(d, i) {
+                d3.select(this).style("display", "block");
+            })
+            .on("mouseout", function(d, i) {
+                 d3.select(this).style("display", "none");
+           })
+            
+            .on("click", function(d, i) {
+                d3.selectAll(".country").classed("country-on", false);
+                d3.select("#country" + d.properties.iso_a3).classed("country-on", true);
+                
+            });
+         
+          countryLabels
+            .append("text")
+            .attr("class", "countryName")
+            .style("text-anchor", "middle")
+            .attr("dx", 0)
+            .attr("dy", 0)
+            .text(function(d) {
+              return d.properties.name;
+            })
+            .call(getTextBox);
+          
+          countryLabels
+            .insert("rect", "text")
+            .attr("class", "countryLabelBg")
+            .attr("transform", function(d) {
+              return "translate(" + (d.bbox.x - 2) + "," + d.bbox.y + ")";
+            })
+            .attr("width", function(d) {
+              return d.bbox.width + 4;
+            })
+            .attr("height", function(d) {
+              return d.bbox.height;
+            });
+          
+        }
+      );
+ 
+    </script>
+    
+  </body>
+  
+</html>
