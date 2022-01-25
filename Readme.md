@@ -12,6 +12,8 @@ The concept is developed upon a great amount of research.
 
 Therefore, the team was looking to make it easier for elementary school students, who are looking for informations about european countries and there general informations, like country language 
 
+You can reach our website by clicking the following URL:  www.mapsoftheworld.herokuapp.com/
+
 
 # Language, tools, etc. used:
 
